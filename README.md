@@ -1,3 +1,12 @@
+
+Edit: I've verified that the below issue is a bug in the version of vcpkg that ships with Visual Studio 2022 17.14.2 and 17.14.3. The needed fix has been added to vcpkg-tool and it fixes the issue:
+
+    https://github.com/autoantwort/vcpkg-tool/commit/309b951b
+
+The fix will presumably be included in the next release of VS2022 (17.14.4).
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 Sample Visual Studio project that can be used to replicate an issue with vcpkg_download_distfile and an archive file on a local network UNC path. While this project points to a port in a companion vcpkg repository that contains a single test port (https://github.com/jblaisdev/vcpkg-ddtest.git), an overlay port is also supplied so builds can easily be tested in other network environments.
 
 To test this, you will have to have access to a network store that can be accessed via UNC filepaths such as "file://server/path/to/file.zip". A sample zip archive with a single header is included in this project, or you can provide your own.
