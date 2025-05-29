@@ -17,6 +17,7 @@ In order to verify a new and clean environment, Windows Sandbox was used for the
 9. Open the "overlays/ddtest/portfile.cmake" file and make the following change(s):
    * Alter the PATH_ON_NETWORK variable to match whever you stored the archive file in step (4). Note that is should *not* contain the zip filename, only the path.
    * If you chose to use your own zip archive file, alter the ARCHIVE_SHA512 variable to match the SHA of your file.
+   * The supplied port overlay does define NO_REMOVE_ONE_LEVEL during vcpkg_extract_source_archive; remove that if you chose to use your own zip archive file and it contains a top level directory.
 10. Build the ddtest project.
 
 You should see the following error:
